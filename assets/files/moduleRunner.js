@@ -26,12 +26,14 @@ var docs = restructuredDocs(docsMain);
 
 function restructuredDocs(docsMain) {
   data = [];
-  for (d of docsMain.intentDocs) {
+  for (d of docsMain["intentDocs"]) {
+    console.log(d);
     dx = {};
     dx["title"] = d;
-    dx["body"] = docsMain.intentDocs.d;
+    dx["body"] = docsMain["intentDocs"][d];
     data.push(dx);
   }
+  console.log(data);
   return data;
 }
 //==========================================================================================================================
