@@ -8,9 +8,10 @@ var flow = {
   stages: [
     {
       text: ["intro"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/intro.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/intro.mp4",
       // video: "https://pixie.jubi.ai/videoParramato/static/ui/start.mp4",
-      stage: "intro",
+      stage: "hello",
       type: "button",
       next: {
         data: [
@@ -31,7 +32,8 @@ var flow = {
     },
     {
       text: ["name"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/name.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/name.mp4",
       type: "text",
       stage: "name",
       next: {
@@ -45,9 +47,10 @@ var flow = {
     },
     {
       text: ["gender"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/gender.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/gender.mp4",
       type: "button",
-      stage: "gender",
+      stage: "what can you do",
       next: {
         expectation: {
           invalidMessage: "",
@@ -72,7 +75,8 @@ var flow = {
     },
     {
       text: ["age"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/age.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/age.mp4",
       type: "text",
       stage: "age",
       next: {
@@ -86,7 +90,8 @@ var flow = {
     },
     {
       text: ["city"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/city.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/city.mp4",
       type: "button",
       stage: "city",
       next: {
@@ -123,7 +128,8 @@ var flow = {
     },
     {
       text: ["mobile"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/mobile.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mobile.mp4",
       type: "text",
       stage: "mobile",
       next: {
@@ -137,7 +143,8 @@ var flow = {
     },
     {
       text: ["end"],
-      video: "https://pixie.jubi.ai/videoConversation/static/videos/end.mp4",
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/end.mp4",
       type: "button",
       stage: "end",
       next: {
@@ -154,9 +161,9 @@ var flow = {
 };
 
 var theme = {
-  default: "",
-  dark: "https://pixie.jubi.ai/videoConversation/static/css/styledark.css",
-  light: "https://pixie.jubi.ai/videoConversation/static/css/stylexls.css"
+  default: ""
+  // dark: "https://pixie.jubi.ai/videoConversation/static/css/styledark.css",
+  // light: "https://pixie.jubi.ai/videoConversation/static/css/stylexls.css"
 };
 var currentStageNum = -1; // Stores current stage number
 var flowJSON = {}; // Stores flow key(stage name) - value(stage data) pair
@@ -196,41 +203,6 @@ $(document).ready(() => {
     )[0].innerHTML = `<h3>This page only works for <b>Android</b> mobile users</h3>`;
     document.getElementsByClassName("display")[0].style.color = "white";
   }
-
-  // document.getElementById("stylesheet").href = theme[flow.theme];
-  // document.addEventListener("fullscreenchange", exitHandler);
-  // document.addEventListener("webkitfullscreenchange", exitHandler);
-  // document.addEventListener("mozfullscreenchange", exitHandler);
-  // document.addEventListener("MSFullscreenChange", exitHandler);
-
-  // exitHandler(document);
-
-  // $(".text-send-idle").click(event => {
-  //   let el = event.currentTarget;
-  //   el.lastElementChild.style.display = "block";
-  //   el.firstElementChild.style.display = "none";
-  //   el.style.float = "right";
-  //   el.style["margin-right"] = "1%";
-  //   el.classList.add("text-send-transition");
-  //   el.addEventListener("animationend", () => {
-  //     console.log("animation END......");
-  //     getNextStageData();
-  // el.classList.remove("text-send-transition");
-  // el.classList.remove("text-send-idle");
-  // el.classList.add("text-send");
-  // el.style.width = "34px";
-  // setTimeout(() => {
-  //   console.log("revert Called......");
-  //   el.style["margin-right"] = undefined;
-  //   el.style.float = undefined;
-  //   el.lastElementChild.style.display = "none";
-  //   el.firstElementChild.style.display = "block";
-  //   el.classList.remove("text-send");
-  //   el.classList.add("text-send-idle");
-  //   el.style.width = "22%";
-  // }, 2000);
-  //   });
-  // });
 
   // console.log("ready");
   let classes = document.getElementsByClassName("button");
@@ -372,7 +344,7 @@ function FS() {
 }
 
 function getNextStageData(nextStage) {
-  // console.log("Next Stage ... ", nextStage);
+  console.log("Next Stage ... ", nextStage);
   clearChat();
   removeBlurBackground();
   // $("#playImg").hide();

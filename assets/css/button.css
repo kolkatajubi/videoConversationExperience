@@ -22,6 +22,7 @@ body {
   display: flex;
   height: 40vh;
   bottom: -100px;
+  z-index: -1;
   position: absolute;
   font-family: sans-serif;
   font-weight: 600;
@@ -165,4 +166,57 @@ body {
 
 .remove {
   display: none;
+}
+/* ++++++++++++++++++++++++++++++++++++++++ MIC ANIMATION DIV +++++++++++++++++++++++++++++++++++++++++++++++++ */
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed");
+
+.wrapper {
+  padding: 20px;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(5, 39, 245, 0.83);
+  }
+  100% {
+    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes shadow-pulse-big {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
+  }
+}
+
+.anim-div {
+  display: none;
+  z-index: 10;
+  float: left;
+  bottom: 36px;
+  position: absolute;
+  margin: 0;
+  width: 85px;
+  height: 85px;
+  font: 13px/130px "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  background: rgba(30, 61, 255, 0.3);
+  border-radius: 50%;
+  animation: shadow-pulse 1s infinite;
+}
+
+.mic-anim {
+  width: 50%;
+  justify-content: center;
+  float: left;
+  margin-left: 25.3%;
+  margin-top: 15%;
+  text-align: center;
+  align-items: center;
 }

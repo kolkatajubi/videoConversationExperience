@@ -110,3 +110,21 @@
     transform: rotate(360deg);
   }
 }
+
+.mic-div {
+  display: block;
+  width: 40px;
+  text-align: center;
+  position: absolute;
+  bottom: 46px;
+  z-index: 10;
+}
+.mic-icon {
+  width: 100%;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+.mic-listening {
+  width: 100%;
+  display: none;
+}
