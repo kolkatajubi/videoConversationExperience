@@ -1,3 +1,64 @@
+var bm25 = require("../../node_modules/wink-bm25-text-search");
+// Create search engine's instance
+var engine = bm25();
+// Load NLP utilities
+var nlp = require("wink-nlp-utils");
+
+var pipe = [
+  nlp.string.lowerCase,
+  nlp.string.tokenize0,
+  nlp.tokens.removeWords,
+  nlp.tokens.stem,
+  nlp.tokens.propagateNegations
+];
+var query = "";
+var docsMain = {
+  intentDocs: {
+    name: ["what is your name", "tell me your name"],
+    made: ["who made you"]
+  },
+  videos: {
+    name: "https://name.mp4",
+    made: "https://made.mp4"
+  }
+};
+var docs = docsMain => {
+  data = [];
+  for (d of docsMain.intentDocs) {
+    dx = {};
+    dx["title"] = d;
+    dx["body"] = docsMain.intentDocs.d;
+    data.push(dx);
+  }
+  return data;
+};
+//==========================================================================================================================
+engine.defineConfig({ fldWeights: { title: 1, body: 2 } });
+// Step II: Define PrepTasks pipe.
+// Set up 'default' preparatory tasks i.e. for everything else
+engine.definePrepTasks(pipe);
+
+// Step III: Add Docs
+// Add documents now...
+docs.forEach(function(doc, i) {
+  // Note, 'i' becomes the unique id for 'doc'
+  engine.addDoc(doc, i);
+});
+
+// Step IV: Consolidate
+// Consolidate before searching
+engine.consolidate();
+//====================================================================================================
+
+function NLP(query) {
+  var result = engine.search(query);
+  console.log("result -> ", result);
+  console.log("result length -> ", result.length);
+  console.log("result title -> ", docs[results[0][0]].title);
+  console.log(docs[results[0][0]].body);
+  getNextStageData(docs[results[0][0]].title);
+}
+
 var flow = {
   _id: {
     $oid: "5db16a857a18e0fd769d0c06"

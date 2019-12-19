@@ -28,7 +28,7 @@ recognition.onresult = event => {
   for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
     let transcript = event.results[i][0].transcript;
     if (event.results[i].isFinal) {
-      getNextStageData(transcript);
+      NLP(transcript);
       console.log("speech -> ", transcript);
       recognition.stop();
       $("#mic-listening").hide();
