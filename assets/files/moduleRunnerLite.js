@@ -14,14 +14,11 @@ var pipe = [
 ];
 var query = "";
 var docsMain = {
-  intentDocs: {
-    name: ["what is your name", "tell me your name"],
-    made: ["who made you"]
-  },
-  videos: {
-    name: "https://name.mp4",
-    made: "https://made.mp4"
-  }
+  intentDocs: [
+    { title: "name", body: ["what is your name", "tell me your name"] },
+    { title: "made", body: ["who made you"] }
+  ],
+  videos: [{ name: "https://name.mp4" }, { made: "https://made.mp4" }]
 };
 var docs = restructuredDocs(docsMain);
 
@@ -29,10 +26,12 @@ function restructuredDocs(docsMain) {
   data = [];
   for (d of docsMain["intentDocs"]) {
     console.log(d);
-    dx = {};
-    dx["title"] = d;
-    dx["body"] = docsMain["intentDocs"][d];
-    data.push(dx);
+    for (b of d.body) {
+      dx = {};
+      dx["title"] = d.title;
+      dx["body"] = b;
+      data.push(dx);
+    }
   }
   console.log(data);
   return data;
