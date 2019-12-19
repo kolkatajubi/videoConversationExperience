@@ -64,9 +64,9 @@ function NLP(query) {
   var result = engine.search(query);
   console.log("result -> ", result);
   console.log("result length -> ", result.length);
-  console.log("result title -> ", docs[results[0][0]].title);
-  console.log(docs[results[0][0]].body);
-  getNextStageData(docs[results[0][0]].title);
+  console.log("result title -> ", docs[result[0][0]].title);
+  console.log("result body -> ", docs[result[0][0]].body);
+  getNextStageData(docs[result[0][0]].title);
 }
 
 var flow = {
@@ -236,6 +236,7 @@ var theme = {
   // dark: "https://pixie.jubi.ai/videoConversation/static/css/styledark.css",
   // light: "https://pixie.jubi.ai/videoConversation/static/css/stylexls.css"
 };
+
 var currentStageNum = -1; // Stores current stage number
 var flowJSON = {}; // Stores flow key(stage name) - value(stage data) pair
 var currentData = {}; // Stores current stage data
