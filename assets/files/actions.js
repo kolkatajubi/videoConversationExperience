@@ -2,6 +2,8 @@ $(document).ready(function() {
   $("#mic-icon").click(function(event) {
     event.preventDefault();
     // console.log("started");
+    myVideo.pause();
+    blurBackground();
     recognition.start();
     $("#mic-icon").hide();
     $("#mic-listening").show();
