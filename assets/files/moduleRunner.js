@@ -40,10 +40,15 @@ engine.definePrepTasks(pipe);
 
 // Step III: Add Docs
 // Add documents now...
-docs.forEach(function(doc, i) {
-  // Note, 'i' becomes the unique id for 'doc'
-  engine.addDoc(doc, i);
-});
+temp = 0;
+for (doc of docs) {
+  engine.addDoc(doc, temp);
+  temp++;
+}
+// docs.forEach(function(doc, i) {
+//   // Note, 'i' becomes the unique id for 'doc'
+//   engine.addDoc(doc, i);
+// });
 
 // Step IV: Consolidate
 // Consolidate before searching
