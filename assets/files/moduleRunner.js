@@ -248,6 +248,17 @@ var firstClick = 0; // First video click of the user
 restructureData();
 
 $(document).ready(() => {
+  function videoClick() {
+    if (firstClick == 0) {
+      FS();
+      myVideo.muted = false;
+      firstClick = 1;
+    } else {
+      FS();
+      playPause();
+    }
+  }
+
   let testExp = new RegExp("Android|" + "BlackBerry|" + "IEMobile|Mobile", "i");
   if (testExp.test(navigator.userAgent)) {
     documentReady();
