@@ -23,7 +23,9 @@ var docsMain = {
     made: "https://made.mp4"
   }
 };
-var docs = function(docsMain) {
+var docs = restructuredDocs(docsMain);
+
+function restructuredDocs(docsMain) {
   data = [];
   for (d of docsMain.intentDocs) {
     dx = {};
@@ -32,7 +34,7 @@ var docs = function(docsMain) {
     data.push(dx);
   }
   return data;
-};
+}
 //==========================================================================================================================
 engine.defineConfig({ fldWeights: { title: 1, body: 2 } });
 // Step II: Define PrepTasks pipe.
