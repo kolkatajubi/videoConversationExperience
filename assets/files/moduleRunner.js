@@ -22,7 +22,7 @@ var docsMain = {
     made: "https://made.mp4"
   }
 };
-var docs = docsMain => {
+var docs = function(docsMain) {
   data = [];
   for (d of docsMain.intentDocs) {
     dx = {};
