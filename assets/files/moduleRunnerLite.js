@@ -42,6 +42,7 @@ engine.definePrepTasks(pipe);
 // Step III: Add Docs
 // Add documents now...
 temp = 0;
+console.log(docs);
 for (doc of docs) {
   engine.addDoc(doc, temp);
   temp++;
