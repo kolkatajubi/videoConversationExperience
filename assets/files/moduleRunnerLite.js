@@ -191,6 +191,7 @@ engine.consolidate();
 //====================================================================================================
 
 function NLP(query) {
+  console.log("query NLP ->", query);
   var result = engine.search(query);
   console.log("result -> ", result);
   console.log("result length -> ", result.length);
