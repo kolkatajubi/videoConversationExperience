@@ -33,6 +33,7 @@ body {
 
 .display {
   background-image: url("https://pixie.jubi.ai/videoConversationTrue/static/icons/thumbnail.png");
+  background-size: 100%;
   width: 100%;
   height: 100%;
   align-items: center;
