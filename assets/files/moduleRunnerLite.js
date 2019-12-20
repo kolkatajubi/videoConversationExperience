@@ -200,6 +200,7 @@ function NLP(query) {
       break;
     }
   }
+  // skyfall
   if (myBoolean) {
     NLPbm25(query);
   }
