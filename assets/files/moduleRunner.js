@@ -206,7 +206,11 @@ function NLP(query) {
     for (let i = 0; i < result_length; i++) {
       result[i][1] = result[i][1] / sum;
     }
-    if (result[0][1] > (1.0 / result_length) * 1.02) {
+    if (
+      result[0][1] > (1.0 / result_length) * 1.02 > 1
+        ? 1
+        : (0.9 / result_length) * 1.02
+    ) {
       getNextStageData(docs[result[0][0]].title);
     } else {
       getNextStageData("fallback");
