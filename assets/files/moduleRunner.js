@@ -517,8 +517,7 @@ $(document).ready(() => {
     )[0].innerHTML = `<h3>This page only works for <b>Android</b> mobile users</h3>`;
     document.getElementsByClassName("display")[0].style.color = "white";
   }
-
-  function videoClick() {
+  $("#myVideo").on("click", event => {
     if (firstClick == 0) {
       FS();
       myVideo.muted = false;
@@ -527,7 +526,8 @@ $(document).ready(() => {
       FS();
       playPause();
     }
-  }
+  });
+
   // console.log("ready");
   let classes = document.getElementsByClassName("button");
   for (let element of classes) {
@@ -644,7 +644,7 @@ function exitHandler(document) {
 
 function documentReady() {
   $(".display").append(`
-      <video autoplay muted id="myVideo"  onclick="videoClick();" playsinline>
+      <video autoplay muted id="myVideo"  playsinline>
       </video>
       <div class="box">
       </div>
