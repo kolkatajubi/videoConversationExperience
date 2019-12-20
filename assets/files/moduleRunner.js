@@ -215,7 +215,7 @@ var flow = {
       video:
         "https://pixie.jubi.ai/videoConversationSelf/static/videos/intro.mp4",
       // video: "https://pixie.jubi.ai/videoParramato/static/ui/start.mp4",
-      stage: "hello",
+      stage: "intro",
       type: "button",
       next: {
         data: [
@@ -252,9 +252,9 @@ var flow = {
     {
       text: ["gender"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/gender.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/made.mp4",
       type: "button",
-      stage: "what can you do",
+      stage: "made",
       next: {
         expectation: {
           invalidMessage: "",
@@ -280,9 +280,9 @@ var flow = {
     {
       text: ["age"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/age.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/interest.mp4",
       type: "text",
-      stage: "age",
+      stage: "interest",
       next: {
         expectation: {
           invalidMessage: "",
@@ -295,9 +295,9 @@ var flow = {
     {
       text: ["city"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/city.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/help.mp4",
       type: "button",
-      stage: "city",
+      stage: "help",
       next: {
         data: [
           {
@@ -333,9 +333,9 @@ var flow = {
     {
       text: ["mobile"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mobile.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/emi.mp4",
       type: "text",
-      stage: "mobile",
+      stage: "emi",
       next: {
         expectation: {
           invalidMessage: "",
@@ -348,9 +348,105 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/end.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/doing.mp4",
       type: "button",
-      stage: "end",
+      stage: "doing",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/carousel.mp4",
+      type: "button",
+      stage: "carousel",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/credit_score.mp4",
+      type: "button",
+      stage: "credit_score",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/how_are_you.mp4",
+      type: "button",
+      stage: "how_are_you",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mutual_fund.mp4",
+      type: "button",
+      stage: "mutual_fund",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/what_are_you_doing.mp4",
+      type: "button",
+      stage: "what_are_you_doing",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/fallback.mp4",
+      type: "button",
+      stage: "fallback",
       next: {
         data: [
           {
