@@ -519,6 +519,16 @@ $(document).ready(() => {
     document.getElementsByClassName("display")[0].style.color = "white";
   }
 
+  function videoClick() {
+    if (firstClick == 0) {
+      FS();
+      myVideo.muted = false;
+      firstClick = 1;
+    } else {
+      FS();
+      playPause();
+    }
+  }
   // console.log("ready");
   let classes = document.getElementsByClassName("button");
   for (let element of classes) {
@@ -575,17 +585,6 @@ $(document).ready(() => {
   });
   //===================================================
 });
-
-function videoClick() {
-  if (firstClick == 0) {
-    FS();
-    myVideo.muted = false;
-    firstClick = 1;
-  } else {
-    FS();
-    playPause();
-  }
-}
 
 //===================================================
 
