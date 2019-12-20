@@ -193,9 +193,10 @@ function NLP(query) {
   var result = engine.search(query);
   console.log("result -> ", result);
   console.log("result length -> ", result.length);
-  console.log("result title -> ", docs[result[0][0]].title);
-  console.log("result body -> ", docs[result[0][0]].body);
+
   if (result.length > 0) {
+    console.log("result title -> ", docs[result[0][0]].title);
+    console.log("result body -> ", docs[result[0][0]].body);
     sum = 0;
     for (score of result) {
       sum = sum + score[1];
@@ -517,6 +518,7 @@ $(document).ready(() => {
     )[0].innerHTML = `<h3>This page only works for <b>Android</b> mobile users</h3>`;
     document.getElementsByClassName("display")[0].style.color = "white";
   }
+
   $("#myVideo").on("click", event => {
     if (firstClick == 0) {
       FS();
