@@ -652,17 +652,6 @@ function documentReady() {
     `);
 }
 
-function videoClick() {
-  if (firstClick == 0) {
-    FS();
-    myVideo.muted = false;
-    firstClick = 1;
-  } else {
-    FS();
-    playPause();
-  }
-}
-
 function restructureData() {
   for (i = 0; i < flow.stages.length; i++) {
     //   var key = flow.stages[i].stage;
