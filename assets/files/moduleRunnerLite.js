@@ -211,8 +211,8 @@ function NLP(query) {
       console.log("fallback");
     }
   } else {
-    getNextStageData("fallback");
     console.log("fallback");
+    getNextStageData("fallback");
   }
 }
 
