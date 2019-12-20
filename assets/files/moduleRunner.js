@@ -199,13 +199,14 @@ function NLP(query) {
     console.log("result title -> ", docs[result[0][0]].title);
     console.log("result body -> ", docs[result[0][0]].body);
     sum = 0;
-    for (score of result.slice(0, 4)) {
+    result_length = result.length >= 4 ? 4 : result.length;
+    for (score of result.slice(0, result_length)) {
       sum = sum + score[1];
     }
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < result_length; i++) {
       result[i][1] = result[i][1] / sum;
     }
-    if (result[0][1] > 0.25) {
+    if (result[0][1] > (1.0 / result_length) * 1.02) {
       getNextStageData(docs[result[0][0]].title);
     } else {
       getNextStageData("fallback");
