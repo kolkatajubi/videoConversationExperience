@@ -204,7 +204,7 @@ function NLP(query) {
     for (let i = 0; i < 4; i++) {
       result[i][1] = result[i][1] / sum;
     }
-    if (result[0][1] > 0.3) {
+    if (result[0][1] > 0.25) {
       getNextStageData(docs[result[0][0]].title);
     } else {
       getNextStageData("fallback");
