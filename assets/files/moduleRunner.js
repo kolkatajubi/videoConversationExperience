@@ -211,13 +211,14 @@ function NLP(query) {
         ? 1
         : (0.9 / result_length) * 1.02
     ) {
+      console.log("getNextStageData : ", docs[result[0][0]].title);
       getNextStageData(docs[result[0][0]].title);
     } else {
+      console.log("confidence fallback");
       getNextStageData("fallback");
-      console.log("fallback");
     }
   } else {
-    console.log("fallback");
+    console.log("result > 0 : fallback");
     getNextStageData("fallback");
   }
 }
