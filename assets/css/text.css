@@ -121,8 +121,8 @@
 }
 .mic-icon {
   width: 100%;
-  -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
+  -webkit-filter: drop-shadow(0px 4px 2px #2b2b2bd6);
+  /* filter: drop-shadow(0px 4px 2px #2b2b2bd6); */
 }
 .mic-listening {
   width: 100%;

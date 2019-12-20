@@ -15,10 +15,140 @@ var pipe = [
 var query = "";
 var docsMain = {
   intentDocs: [
-    { title: "name", body: ["what is your name", "tell me your name"] },
-    { title: "made", body: ["who made you"] }
-  ],
-  videos: [{ name: "https://name.mp4" }, { made: "https://made.mp4" }]
+    {
+      title: "name",
+      body: [
+        "what is your name",
+        "tell me your name",
+        "may i have your name",
+        "How may I address you",
+        "How is one to call you",
+        "Could I ask your name",
+        "What name shall I say",
+        "hi your name please",
+        "i forgot to ask your name",
+        "who are you",
+        "what should i call you",
+        "what do i call you",
+        "name"
+      ]
+    },
+    {
+      title: "made",
+      body: [
+        "who made you",
+        "who created you",
+        "who is your creator",
+        "by whom have you been created",
+        "by whom were you created",
+        "who built you",
+        "who invented you",
+        "who formed you",
+        "who manufactured you",
+        "who is your inventor"
+      ]
+    },
+    {
+      title: "interest",
+      body: [
+        "simple interest",
+        "what is simple interest",
+        "can you tell me about simple interest",
+        "give me a idea about simple interest",
+        "say something about simple interest",
+        "can you help me to understand simple interest",
+        "what is interest",
+        "tell me about interest",
+        "what are interests",
+        "what is interest"
+      ]
+    },
+    {
+      title: "mutual_fund",
+      body: [
+        "what is mutual fund",
+        "tell me about mutual fund",
+        "can you tell me about mutual fund",
+        "say something about mutual fund",
+        "help me understand mutual fund",
+        "mutual fund"
+      ]
+    },
+    {
+      title: "help",
+      body: [
+        "what can you do",
+        "What are you capable of",
+        "how can you help me",
+        "Could you help me out",
+        "Could you give me a hand",
+        "help me"
+      ]
+    },
+    {
+      title: "credit_score",
+      body: [
+        "What is a cibil Score",
+        "can you tell me about cibil score",
+        "give me a idea about cibil score",
+        "say something about cibil score",
+        "can you help me to understand cibil score",
+        "what is credit score",
+        "tell me about credit score",
+        "help me with credit score",
+        "credit score",
+        "cibil score"
+      ]
+    },
+    {
+      title: "contact",
+      body: [
+        "for more queries whom should i contact",
+        "for more question whom should i contact",
+        "for more concern whom should i contact",
+        "for more doubt whom should i contact",
+        "for any problem whom should i contact",
+        "for any uncertainty whom should i contact"
+      ]
+    },
+    {
+      title: "emi",
+      body: [
+        "what is emi",
+        "can you help me to understand emi",
+        "please explain emi",
+        "say something about emi",
+        "give me a idea about emi",
+        "can you tell me about emi",
+        "tell me about emi",
+        "emi"
+      ]
+    },
+    {
+      title: "how_are_you",
+      body: [
+        "how are you",
+        "are you doing well",
+        "how are things",
+        "are you well",
+        "you all right",
+        "how are you feeling",
+        "how do you do",
+        "how was your day"
+      ]
+    },
+    {
+      title: "what_are_you_doing",
+      body: [
+        "WHAT ARE YOU DOING",
+        "ARE YOU DOING ANYTHING",
+        "WHAT ARE YOU DOING",
+        "WHAT IS GOING ON IN HERE",
+        "WHAT ARE YOU UP TO",
+        "What do you do"
+      ]
+    }
+  ]
 };
 var docs = restructuredDocs(docsMain);
 
@@ -66,7 +196,11 @@ function NLP(query) {
   console.log("result length -> ", result.length);
   console.log("result title -> ", docs[result[0][0]].title);
   console.log("result body -> ", docs[result[0][0]].body);
-  getNextStageData(docs[result[0][0]].title);
+  if (result && result[0][1] > 0.5) {
+    getNextStageData(docs[result[0][0]].title);
+  } else {
+    getNextStageData("fallback");
+  }
 }
 
 var flow = {
@@ -82,7 +216,7 @@ var flow = {
       video:
         "https://pixie.jubi.ai/videoConversationSelf/static/videos/intro.mp4",
       // video: "https://pixie.jubi.ai/videoParramato/static/ui/start.mp4",
-      stage: "hello",
+      stage: "intro",
       type: "button",
       next: {
         data: [
@@ -119,9 +253,9 @@ var flow = {
     {
       text: ["gender"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/gender.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/made.mp4",
       type: "button",
-      stage: "what can you do",
+      stage: "made",
       next: {
         expectation: {
           invalidMessage: "",
@@ -147,9 +281,9 @@ var flow = {
     {
       text: ["age"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/age.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/interest.mp4",
       type: "text",
-      stage: "age",
+      stage: "interest",
       next: {
         expectation: {
           invalidMessage: "",
@@ -162,9 +296,9 @@ var flow = {
     {
       text: ["city"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/city.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/help.mp4",
       type: "button",
-      stage: "city",
+      stage: "help",
       next: {
         data: [
           {
@@ -200,9 +334,9 @@ var flow = {
     {
       text: ["mobile"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mobile.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/emi.mp4",
       type: "text",
-      stage: "mobile",
+      stage: "emi",
       next: {
         expectation: {
           invalidMessage: "",
@@ -215,9 +349,105 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/end.mp4",
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/doing.mp4",
       type: "button",
-      stage: "end",
+      stage: "doing",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/carousel.mp4",
+      type: "button",
+      stage: "carousel",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/credit_score.mp4",
+      type: "button",
+      stage: "credit_score",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/how_are_you.mp4",
+      type: "button",
+      stage: "how_are_you",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mutual_fund.mp4",
+      type: "button",
+      stage: "mutual_fund",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/what_are_you_doing.mp4",
+      type: "button",
+      stage: "what_are_you_doing",
+      next: {
+        data: [
+          {
+            type: "url",
+            data: "https://www.policybazaar.com/",
+            text: "Compare now!"
+          }
+        ]
+      }
+    },
+    {
+      text: ["end"],
+      video:
+        "https://pixie.jubi.ai/videoConversationSelf/static/videos/fallback.mp4",
+      type: "button",
+      stage: "fallback",
       next: {
         data: [
           {
@@ -249,17 +479,6 @@ var firstClick = 0; // First video click of the user
 restructureData();
 
 $(document).ready(() => {
-  function videoClick() {
-    if (firstClick == 0) {
-      FS();
-      myVideo.muted = false;
-      firstClick = 1;
-    } else {
-      FS();
-      playPause();
-    }
-  }
-
   let testExp = new RegExp("Android|" + "BlackBerry|" + "IEMobile|Mobile", "i");
   if (testExp.test(navigator.userAgent)) {
     documentReady();
@@ -343,6 +562,17 @@ $(document).ready(() => {
   });
   //===================================================
 });
+
+function videoClick() {
+  if (firstClick == 0) {
+    FS();
+    myVideo.muted = false;
+    firstClick = 1;
+  } else {
+    FS();
+    playPause();
+  }
+}
 
 //===================================================
 
