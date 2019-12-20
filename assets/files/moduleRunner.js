@@ -213,7 +213,7 @@ var flow = {
     {
       text: ["intro"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/intro.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/intro.mp4",
       // video: "https://pixie.jubi.ai/videoParramato/static/ui/start.mp4",
       stage: "intro",
       type: "button",
@@ -237,7 +237,7 @@ var flow = {
     {
       text: ["name"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/name.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/name.mp4",
       type: "text",
       stage: "name",
       next: {
@@ -252,7 +252,7 @@ var flow = {
     {
       text: ["gender"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/made.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/made.mp4",
       type: "button",
       stage: "made",
       next: {
@@ -280,7 +280,7 @@ var flow = {
     {
       text: ["age"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/interest.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/interest.mp4",
       type: "text",
       stage: "interest",
       next: {
@@ -295,7 +295,7 @@ var flow = {
     {
       text: ["city"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/help.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/help.mp4",
       type: "button",
       stage: "help",
       next: {
@@ -333,7 +333,7 @@ var flow = {
     {
       text: ["mobile"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/emi.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/emi.mp4",
       type: "text",
       stage: "emi",
       next: {
@@ -348,7 +348,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/doing.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/doing.mp4",
       type: "button",
       stage: "doing",
       next: {
@@ -364,7 +364,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/carousel.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/carousel.mp4",
       type: "button",
       stage: "carousel",
       next: {
@@ -380,7 +380,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/credit_score.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/credit_score.mp4",
       type: "button",
       stage: "credit_score",
       next: {
@@ -396,7 +396,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/how_are_you.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/how_are_you.mp4",
       type: "button",
       stage: "how_are_you",
       next: {
@@ -412,7 +412,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/mutual_fund.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/mutual_fund.mp4",
       type: "button",
       stage: "mutual_fund",
       next: {
@@ -428,7 +428,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/what_are_you_doing.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/what_are_you_doing.mp4",
       type: "button",
       stage: "what_are_you_doing",
       next: {
@@ -444,7 +444,7 @@ var flow = {
     {
       text: ["end"],
       video:
-        "https://pixie.jubi.ai/videoConversationSelf/static/videos/fallback.mp4",
+        "https://pixie.jubi.ai/videoConversationTrue/static/videos/fallback.mp4",
       type: "button",
       stage: "fallback",
       next: {
