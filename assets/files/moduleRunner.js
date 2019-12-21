@@ -541,15 +541,18 @@ $(document).ready(() => {
     document.getElementsByClassName("display")[0].style.color = "white";
   }
 
-  $("#myVideo").on("click", event => {
+  $("#overlay").on("click", event => {
+    $("#overlay").hide();
     if (firstClick == 0) {
       FS();
-      myVideo.muted = false;
+      myVideo.play();
+      // myVideo.muted = false;
       firstClick = 1;
-    } else {
-      FS();
-      playPause();
     }
+  });
+  $("#myVideo").on("click", event => {
+    FS();
+    playPause();
   });
 
   // console.log("ready");
@@ -667,8 +670,8 @@ function exitHandler(document) {
 }
 
 function documentReady() {
-  $(".display").append(`
-      <video autoplay muted id="myVideo"  playsinline>
+  $("#secVideo").append(`
+      <video id="myVideo"  playsinline>
       </video>
       <div class="box">
       </div>

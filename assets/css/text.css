@@ -118,9 +118,26 @@
   position: absolute;
   bottom: 46px;
   z-index: 10;
+  display: block;
+  z-index: 10;
+  float: left;
+  bottom: 36px;
+  position: absolute;
+  margin: 0;
+  width: 85px;
+  height: 85px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50%;
 }
 .mic-icon {
-  width: 100%;
+  width: 50%;
+  justify-content: center;
+  float: left;
+  margin-left: 25.3%;
+  margin-top: 15%;
+  text-align: center;
+  align-items: center;
   -webkit-filter: drop-shadow(0px 4px 2px #2b2b2bd6);
   /* filter: drop-shadow(0px 4px 2px #2b2b2bd6); */
 }
