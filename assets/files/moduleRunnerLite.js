@@ -671,7 +671,16 @@ function exitHandler(document) {
 }
 
 function documentReady() {
-  $("#secVideo").append(`
+  $(".display").append(`
+      <div class="mic-div" id="mic-icon">
+        <img class="mic-icon" src="https://pixie.jubi.ai/videoConversationTrue/static/icons/mic-icon.png" alt="mic-icon" />
+      </div>
+      <div class="anim-div" id="mic-listening">
+        <img class="mic-anim" src="https://pixie.jubi.ai/videoConversationTrue/static/icons/mic-icon.png" alt="mic-icon" />
+      </div>
+      <div class="overlay" id="overlay">
+        <img src="https://pixie.jubi.ai/videoConversationTrue/static/icons/thumbnail.jpg" alt="">
+      </div>
       <video id="myVideo"  playsinline>
       </video>
       <div class="box">
