@@ -195,7 +195,7 @@ body {
 
 @keyframes shadow-pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(5, 39, 245, 0.83);
+    box-shadow: 0 0 0 0px #e4382d;
   }
   100% {
     box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
@@ -221,7 +221,7 @@ body {
   width: 85px;
   height: 85px;
   text-align: center;
-  background: rgba(30, 61, 255, 0.3);
+  background: #dadadae3;
   border-radius: 50%;
   animation: shadow-pulse 1s infinite;
 }
